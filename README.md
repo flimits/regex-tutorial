@@ -9,7 +9,7 @@ There are literal characters and meta characters that you use to create these re
 
 That is, it can be a capital letter, or lower case, a combination letters and numbers and so on.
 
-Meta characters are characters that have special meaning when used in regex and can be used to single out something you are looking for, or be more broud and grab a bigger scope of characters/words/etc. As an example, 
+Meta characters are characters that have special meaning when used in regex and can be used to single out something you are looking for, or be more broad and grab a bigger scope of characters/words/etc. As an example, 
 * the '.' is a meta character that means match "any" character (like ... any character, including a period) 
 * The '*' is a wild card characters which means "any amount of characters"
 * The '?' would mean, match zero or more characters ... (like I want to match an 's' in it or not: ie beans? would match "bean" or "beans")
