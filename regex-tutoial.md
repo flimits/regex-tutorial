@@ -123,18 +123,21 @@ There a word boundaries in regex that say "the start of this boundary is startin
 ### Let's look at some examples of searching for URLs.
 
 A typical URL is like this 'https://www.example.com'. The string that would match this (or anything like it) would be
-1. ```/http?:\/\/\w+\.\w+\.(com|net|org)/``` would give you back 'https://www.example.com'
+1. The following ```/http\?:\/\/\w+\.\w+\.(com|net|org)/``` would give you back 'https://www.example.com'
 If all you want is 'example' from this URL, then you'd do something like
+
 2. The pattern match is more of a script:
-```js
+```javascript
 var myUrl = 'https://www.example.com';
 var myMatch = myUrl.match(/^https:\/\/www\.([a-zA-Z0-9]+)\.com$/);
 console.log(myMatch[1])
 ```
+
 3. If you want more complication ... You can also get more specific, like the www could be a 3 letter word, the root of the URL being 3 characters and the domain of the URL cannot start with a number, and can be either http or https.
-```js
+
+```javascript
 var myUrl = 'https://www.4exa2mple.com'; // would not work but exa2mpe would work.
-var myMatch = myUrl.match(/^http(s)?:\/\/\w{3}\.([a-zA-z][a-zA-Z0-9]+)\.\w{3}$/);
+var myMatch = myUrl.match(/^http(s)\?:\/\/\w{3}\.([a-zA-z][a-zA-Z0-9]+)\.\w{3}\$/);
 
 
 if (myMatch) {
@@ -142,10 +145,23 @@ if (myMatch) {
     console.log(extractedWord); // Output: example
 } else {
     console.log('No match found');
-}```
+}
+```
 
 
-## Author
+### Special thanks to a couple of sites that really helped me understand more about them:
+
+* RegexBuddy - https://www.regular-expressions.info/charclass.html
+* Ocpsoft - https://www.ocpsoft.org/tutorials/regular-expressions/or-in-regex/
+<br>
+* And of course, Daniel Shiffman with, The Coding Train on YouTube.com (https://www.youtube.com/watch?v=7DG3kCDx53c)
+<br>
+* Mozilla Developer - https://developer.mozilla.org/ is also a resource used
+
+* Plain English - https://plainenglish.io/blog/regular-expressions-brackets-f2d6f69ffe13#regex-in-javascript
+
+
+### Author
 
 | Name      |Email      | Github    | Portfolio |
 |-----------|-----------|-----------|-----------|
